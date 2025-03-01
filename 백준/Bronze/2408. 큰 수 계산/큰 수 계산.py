@@ -1,6 +1,6 @@
 import math
 
-def is_float(num):
+def is_int(num):
     try:
         a = int(num)
         return True
@@ -14,7 +14,7 @@ length = 0
 
 while length < n:
     a = input()
-    if (is_float(a)):
+    if (is_int(a)):
         a = int(a)
         if(len(operator) and (operator[-1] == "*" or operator[-1] == "/")):
             b = operation.pop()
@@ -38,4 +38,4 @@ while(len(operator)):
         operation.insert(0, a - b)
     
 
-print(int(operation[0]))
+print(operation[0])
