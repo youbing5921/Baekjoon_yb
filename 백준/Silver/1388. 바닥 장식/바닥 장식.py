@@ -27,9 +27,10 @@ res += check_tile(floor, "-")
 
 # | 타일이 몇 개 쓰여야 하는지 조사
 reversed_floor = [[0] * n for _ in range(m)]
-for i in range(n):
-    for j in range(m):
-        reversed_floor[j][i] = floor[i][j]
+# for i in range(n):
+#     for j in range(m):
+#         reversed_floor[j][i] = floor[i][j]
+reversed_floor = list(map(list, zip(*floor)))
 res += check_tile(reversed_floor, "|")
 
 print(res)
