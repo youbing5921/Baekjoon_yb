@@ -7,12 +7,17 @@ def solution(phone_book):
         p2 = p[l:] # 빈 문자열일 수 있음.
         if p1 in dic: # 이미 시작하는 번호가 같은 경우 -> 조건에 맞을 수 있음.
             pp2 = dic[p1]
+            # 길이가 짧은 문자열을 찾아서 다른 문자열의 앞부분과 같은지 확인
             if len(p2) < len(pp2):
                 if p2 == pp2[:len(p2)]:
                     return False
             else:
                 if pp2 == p2[:len(pp2)]:
                     return False
+            # 더 좋은 코드
+            # if p2.startswith(pp2) or pp2.startswith(p2):
+            #     return False
+            
         else: # 시작하는 번호가 같지 않음.
             dic[p1] = p2
     return answer
